@@ -1,26 +1,57 @@
-# Sample blog app for Rubymine debugging tut, rebuilt in Rails 6
+# Ruby on Rails Microblog Tutorial sample application
 
-* Ruby version 2.73 Rails 6.0.4(4)
+This is a fork of the [*Ruby on Rails Tutorial*](http://www.railstutorial.org/) application by Michael Hartl. 
+I created this project to help you try RubyMine features and refactored for Rails 6/Ruby 2.7.3 and use npm instead of yarn.
+To get started with the app, follow the [step-by-step tutorial](https://www.jetbrains.com/help/ruby/get-started.html) 
+or check out our [YouTube channel](https://www.youtube.com/playlist?list=PLQ176FUIyIUanO72dRf6lOefKIznviKKJ).
 
-* System dependencies
+## Getting started
 
-* Configuration
+To get started with the app, first clone the repo and `cd` into the directory:
 
-* Database creation
+```
+$ git clone https://github.com/JetBrains/sample_rails_app.git 
+$ cd sample_rails_app
+```
 
-* Database initialization
+Then install the needed gems (while skipping any gems needed only in production):
 
-* How to run the test suite
+```
+$ bundle install --without production
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Install JavaScript dependencies:
 
-* Deployment instructions
+```
+$ npm install
+```
 
-After bundle install and yarn
+Next, migrate/seed the database, here SQDlite
 
-Is Sqlite , so:
+```
+$ rails db:migrate
 
-rails db:migrate
-rails db:seed
+$ rails db:seed
+```
 
-rails s
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
+
+## Help page
+
+For general help on the Rails Tutorial, see the [Rails Tutorial Help page](https://www.railstutorial.org/help).
+
+## License
+
+All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
+is available jointly under the MIT License and the Beerware License. See
+[LICENSE.md](LICENSE.md) for details.
